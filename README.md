@@ -1,10 +1,12 @@
-# RAG with PDFs, OpenIA Embedding and AzureOpenAI LLM
+# Retrieval-Augmented Generation (RAG)
 
-## RAG Using LCEL
+## RAG with PDFs, OpenIA Embedding and AzureOpenAI LLM
+
+### RAG Using LCEL
 
 This project demonstrates a simple Retrieval-Augmented Generation (RAG) pipeline using **LangChain**, **Chroma**, and **Azure OpenAI**
 
-## How RAG LCEL works
+### How RAG LCEL works
 
 1. **Load PDFs**: Documents inside the `./pdfs` directory are read using `PyPDFDirectoryLoader`.  
 2. **Split Text**: Each document is divided into overlapping chunks with `RecursiveCharacterTextSplitter`.  
@@ -15,17 +17,17 @@ This project demonstrates a simple Retrieval-Augmented Generation (RAG) pipeline
 7. **Chain**: Query → Retriever → Prompt → LLM → Answer.  
 8. **Output**: The final answer is generated based on the PDF content.  
 
-## Run RAG LCEL
+### Run RAG LCEL
 
 ```bash
 python rag_lcel.py
 ```
 
-## RAG Langchain
+### RAG Langchain
 
 This project implements a Retrieval-Augmented Generation (RAG) pipeline using **LangChain**, **Chroma**, and **Azure OpenAI** with a custom prompt design.  
 
-## How RAG Langchain works
+### How RAG Langchain works
 
 1. **Load PDFs**: Documents are loaded from the `./pdfs` folder with `PyPDFDirectoryLoader`.  
 2. **Split Text**: Each PDF is divided into overlapping chunks using `RecursiveCharacterTextSplitter`.  
@@ -36,13 +38,13 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline using **
 7. **RAG Chain**: `create_stuff_documents_chain` builds the answer chain, and `create_retrieval_chain` connects it to the retriever.  
 8. **Execution**: The script queries the model, retrieves context, generates an answer, and prints both the references (page and source) and the final response.  
 
-## Run RAG Langchain
+### Run RAG Langchain
 
 ```bash
 python rag_langchain.py
 ```
 
-## Requirements
+### Requirements
 
 - `Python 3.10+`
 - `langchain`, `langchain-community`  
@@ -51,7 +53,7 @@ python rag_langchain.py
 - `python-dotenv`  
 - `chromadb`
 
-## Environment Variables
+### Environment Variables
 
 The following environment variables must be defined
 
