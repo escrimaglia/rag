@@ -50,6 +50,15 @@ python rag_langchain.py
 - `langchain-openai`  
 - `python-dotenv`  
 - `chromadb`
-  
+
+## Environment Variables
+
+The following environment variables must be defined
+
+- ```AZURE_OPENAI_ENDPOINT``` (if AzureOpenAI LLM is used)
+- ```ZURE_OPENAI_API_KEY``` (if AzureOpenAI LLM is used)
+- ```OPENAI_API_KEY``` (if OpenAI LLM and/or OpenAIEmbeddings are used)
+- ```ANGCHAIN_API_KEY``` (if LangChain Hub for pulling prompts is used)
+
 ```Ed Scrimaglia```
   
