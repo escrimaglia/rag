@@ -53,7 +53,8 @@ def main():
     
     references = ""
     for line in response.get("context", []):
-        references += (f"{'\n'} -> Page: {line.metadata.get('page')}, Source: {line.metadata.get('source')}")
+        source = line.metadata.get('source', 'unknown source').split('/')[-1]
+        references += (f"{'\n'} -> Page: {line.metadata.get('page', 0)}, Source: {source if source else 'unknown source'}")
 
     print (f"{'\n'}References: {references}")
     print (f"{'\n'}Answer: {'\n'}{answer}")
