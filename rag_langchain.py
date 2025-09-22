@@ -46,7 +46,11 @@ def main():
 
     answer = create_stuff_documents_chain(llm, prompt=prompt)
     rag_chain = create_retrieval_chain(retriever, answer)
-    response = rag_chain.invoke({"input": "que son las inecuaciones en programacion lineal?, dame ejemplos"})
+    response = rag_chain.invoke({"input": """Calcular máximos y mínimos relativos, si existen, de las siguientes funciones:
+                                    a) y = 2x - 3x - x^2 
+                                    b) y = x^2 - 12x
+                                    c) y = 3x + 12/x + 20
+                                 """})
 
     composed_context = format_docs(response.get("context", []))
     answer = response.get("answer", "no answer")
